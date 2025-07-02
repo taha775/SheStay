@@ -62,6 +62,12 @@
           </a>
         </li>
         <li class="nav-item">
+          <a class="nav-link  text-dark" href="../pages/branches.html">
+            <i class="material-symbols-rounded opacity-5">table_view</i>
+            <span class="nav-link-text ms-1">Branches</span>
+          </a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link text-dark" href="../pages/fees.html">
             <i class="material-symbols-rounded opacity-5">receipt_long</i>
             <span class="nav-link-text ms-1">Fees Management</span>
@@ -281,59 +287,90 @@
 
 <!-- Modal -->
 <div class="modal fade" id="addHostlerModal" tabindex="-1" aria-labelledby="addHostlerModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg">
-    <div class="modal-content shadow-lg rounded-3">
-      <div class="modal-header  text-white border-bottom-0 rounded-top">
-        <h5 class="modal-title" id="addHostlerModalLabel">Add New Hostler</h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+  <div class="modal-dialog modal-dialog-centered modal-md"> <!-- Changed to modal-md -->
+    <div class="modal-content border-0 shadow">
+      <!-- Header -->
+      <div class="modal-header bg-dark text-white rounded-top-3 p-3 border-0">
+        <div class="d-flex align-items-center w-100">
+          <div class="me-3">
+            <i class="fas fa-user-plus fs-5"></i>
+          </div>
+          <div class="flex-grow-1">
+            <h5 class="modal-title mb-0 fw-bold fs-6" id="addHostlerModalLabel">Add New Hostler</h5>
+            <p class="mb-0 small opacity-75">Fill in the required details</p>
+          </div>
+          <button type="button" class="btn-close btn-close-white m-0" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
       </div>
 
-      <div class="modal-body px-6 py-4">
+      <!-- Modal Body - Compact layout -->
+      <div class="modal-body p-4">
         <form id="hostlerForm">
-          <div class="row g-4">
-
-            <div class="col-md-6">
-              <label class="form-label fw-semibold">Full Name</label>
-              <input type="text" class="form-control shadow-sm" placeholder="Enter full name" required>
+          <div class="row g-3">
+            <!-- Personal Info -->
+            <div class="col-12">
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control border rounded-2" id="fullName" placeholder=" " required>
+                <label for="fullName">Full Name</label>
+              </div>
             </div>
 
-            <div class="col-md-6">
-              <label class="form-label fw-semibold">Email</label>
-              <input type="email" class="form-control shadow-sm" placeholder="Enter email address" required>
+            <div class="col-12">
+              <div class="form-floating mb-3">
+                <input type="email" class="form-control border rounded-2" id="email" placeholder=" " required>
+                <label for="email">Email</label>
+              </div>
             </div>
 
-            <div class="col-md-6">
-              <label class="form-label fw-semibold">Mobile Number</label>
-              <input type="text" class="form-control shadow-sm" placeholder="03XXXXXXXXX" required>
+            <div class="col-12">
+              <div class="form-floating mb-3">
+                <input type="tel" class="form-control border rounded-2" id="mobile" placeholder=" " required>
+                <label for="mobile">Mobile Number</label>
+              </div>
             </div>
 
-            <div class="col-md-6">
-              <label class="form-label fw-semibold">CNIC</label>
-              <input type="text" class="form-control shadow-sm" placeholder="e.g. 42101-1234567-8" required>
+            <div class="col-12">
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control border rounded-2" id="cnic" placeholder=" " required>
+                <label for="cnic">CNIC (e.g., 42101-1234567-8)</label>
+              </div>
             </div>
 
-            <div class="col-md-6">
-              <label class="form-label fw-semibold">Guardian Name</label>
-              <input type="text" class="form-control shadow-sm" placeholder="Enter guardian's full name" required>
+            <!-- Guardian Info Section -->
+            <div class="col-12 mt-2">
+              <hr class="my-2">
+              <h6 class="text-muted mb-3 fw-semibold small">GUARDIAN INFORMATION</h6>
             </div>
 
-            <div class="col-md-6">
-              <label class="form-label fw-semibold">Guardian Phone</label>
-              <input type="text" class="form-control shadow-sm" placeholder="03XXXXXXXXX" required>
+            <div class="col-12">
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control border rounded-2" id="guardianName" placeholder=" " required>
+                <label for="guardianName">Guardian Name</label>
+              </div>
             </div>
 
+            <div class="col-12">
+              <div class="form-floating mb-3">
+                <input type="tel" class="form-control border rounded-2" id="guardianPhone" placeholder=" " required>
+                <label for="guardianPhone">Guardian Phone</label>
+              </div>
+            </div>
           </div>
         </form>
       </div>
 
-      <div class="modal-footer px-4 py-3 border-top-0">
-        <button type="button" class="btn btn-secondary shadow-sm" data-bs-dismiss="modal">Cancel</button>
-        <button type="submit" form="hostlerForm" class="btn btn-primary shadow-sm">Save Hostler</button>
+      <!-- Footer -->
+      <div class="modal-footer border-0 p-3 bg-light rounded-bottom-3">
+        <button type="button" class="btn btn-outline-secondary btn-sm rounded-2 px-3" data-bs-dismiss="modal">
+          Cancel
+        </button>
+        <button type="submit" form="hostlerForm" class="btn btn-primary btn-sm rounded-2 px-3">
+          <i class="fas fa-save me-1"></i> Save
+        </button>
       </div>
     </div>
   </div>
 </div>
-
             <div class="card-body px-0 pb-2">
                      
               <div class="table-responsive p-0">

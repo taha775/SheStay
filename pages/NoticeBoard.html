@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+  <title>Announcements | SheStay</title>
+  <!--     Fonts and icons     -->
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700,900" />
+  <!-- Nucleo Icons -->
+  <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
+  <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
+  <!-- Font Awesome Icons -->
+  <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+  <!-- Material Icons -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <!-- CSS Files -->
+  <link id="pagestyle" href="../assets/css/material-dashboard.css?v=3.2.0" rel="stylesheet" />
+  <style>
+    .announcement-card {
+      transition: all 0.3s ease;
+      border-left: 4px solid;
+    }
+    .announcement-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    .urgent {
+      border-left-color: #f44336;
+    }
+    .general {
+      border-left-color: #2196F3;
+    }
+    .event {
+      border-left-color: #4CAF50;
+    }
+    .status-active {
+      color: #4CAF50;
+    }
+    .status-expired {
+      color: #f44336;
+    }
+  </style>
+</head>
+
+<body class="g-sidenav-show  bg-gray-100">
+  <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-radius-lg fixed-start ms-2  bg-white my-2" id="sidenav-main">
+    <div class="sidenav-header">
+      <i class="fas fa-times p-3 cursor-pointer text-dark opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
+      <a class="navbar-brand px-4 py-3 m-0" href=" https://demos.creative-tim.com/material-dashboard/pages/dashboard " target="_blank">
+        <img src="../assets/img/logo-ct-dark.png" class="navbar-brand-img" width="26" height="26" alt="main_logo">
+        <span class="ms-1 text-sm text-dark font-weight-bold">SheStay</span>
+      </a>
+    </div>
+    <hr class="horizontal dark mt-0 mb-2">
+    <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="../pages/dashboard.html">
+            <i class="material-symbols-rounded opacity-5">dashboard</i>
+            <span class="nav-link-text ms-1">Dashboard</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="../pages/hostlers.html">
+            <i class="material-symbols-rounded opacity-5">table_view</i>
+            <span class="nav-link-text ms-1">Hostlers</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="../pages/branches.html">
+            <i class="material-symbols-rounded opacity-5">table_view</i>
+            <span class="nav-link-text ms-1">Branches</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="../pages/fees.html">
+            <i class="material-symbols-rounded opacity-5">receipt_long</i>
+            <span class="nav-link-text ms-1">Fees Management</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="../pages/rooms.html">
+            <i class="material-symbols-rounded opacity-5">format_textdirection_r_to_l</i>
+            <span class="nav-link-text ms-1">Rooms</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="../pages/room_allotments.html">
+            <i class="material-symbols-rounded opacity-5">format_textdirection_r_to_l</i>
+            <span class="nav-link-text ms-1">Rooms Allotments</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="../pages/mess.html">
+            <i class="material-symbols-rounded opacity-5">format_textdirection_r_to_l</i>
+            <span class="nav-link-text ms-1">Mess Management</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="../pages/satff.html">
+            <i class="material-symbols-rounded opacity-5">format_textdirection_r_to_l</i>
+            <span class="nav-link-text ms-1">Staff</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="../pages/wardens.html">
+            <i class="material-symbols-rounded opacity-5">format_textdirection_r_to_l</i>
+            <span class="nav-link-text ms-1">Wardens</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="../pages/complaints.html">
+            <i class="material-symbols-rounded opacity-5">format_textdirection_r_to_l</i>
+            <span class="nav-link-text ms-1">Complaints</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="../pages/notifications.html">
+            <i class="material-symbols-rounded opacity-5">notifications</i>
+            <span class="nav-link-text ms-1">Notifications</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active bg-gradient-dark text-white" href="../pages/NoticeBoard.html">
+            <i class="material-symbols-rounded opacity-5">notifications</i>
+            <span class="nav-link-text ms-1">NoticeBoard</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="../pages/announcements.html">
+            <i class="material-symbols-rounded opacity-5">campaign</i>
+            <span class="nav-link-text ms-1">Announcements</span>
+          </a>
+        </li>
+        <li class="nav-item mt-3">
+          <h6 class="ps-4 ms-2 text-uppercase text-xs text-dark font-weight-bolder opacity-5">Account pages</h6>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="../pages/profile.html">
+            <i class="material-symbols-rounded opacity-5">person</i>
+            <span class="nav-link-text ms-1">Profile</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="../pages/settings.html">
+            <i class="material-symbols-rounded opacity-5">settings</i>
+            <span class="nav-link-text ms-1">settings</span>
+          </a>
+        </li>
+      </ul>
+      <div class="sidenav-footer position-absolute w-100 bottom-0 ">
+        <div class="mx-3">
+          <a class="btn bg-gradient-dark w-100" href="./logout.html" type="button">Logout</a>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
+    <!-- Navbar -->
+    <nav class="navbar navbar-main navbar-expand-lg px-0 mx-3 shadow-none border-radius-xl" id="navbarBlur" data-scroll="true">
+      <div class="container-fluid py-1 px-3">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
+            <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Pages</a></li>
+            <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Announcements</li>
+          </ol>
+        </nav>
+        <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+          <div class="ms-md-auto pe-md-3 d-flex align-items-center">
+            <div class="input-group input-group-outline">
+              <label class="form-label">Search announcements...</label>
+              <input type="text" class="form-control">
+            </div>
+          </div>
+          <ul class="navbar-nav d-flex align-items-center  justify-content-end">
+            <li class="nav-item d-flex align-items-center">
+              <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank" href="https://www.creative-tim.com/builder?ref=navbar-material-dashboard">Online Builder</a>
+            </li>
+            <li class="mt-1">
+              <a class="github-button" href="https://github.com/creativetimofficial/material-dashboard" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star creativetimofficial/material-dashboard on GitHub">Star</a>
+            </li>
+            <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
+              <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
+                <div class="sidenav-toggler-inner">
+                  <i class="sidenav-toggler-line"></i>
+                  <i class="sidenav-toggler-line"></i>
+                  <i class="sidenav-toggler-line"></i>
+                </div>
+              </a>
+            </li>
+            <li class="nav-item px-3 d-flex align-items-center">
+              <a href="javascript:;" class="nav-link text-body p-0">
+                <i class="material-symbols-rounded fixed-plugin-button-nav">settings</i>
+              </a>
+            </li>
+            <li class="nav-item dropdown pe-3 d-flex align-items-center">
+              <a href="javascript:;" class="nav-link text-body p-0" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="material-symbols-rounded">notifications</i>
+                <span class="position-absolute top-5 start-100 translate-middle badge rounded-pill bg-danger border border-white small py-1 px-2">
+                  <span class="small">4</span>
+                  <span class="visually-hidden">unread notifications</span>
+                </span>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end px-2 py-3 me-sm-n4" aria-labelledby="dropdownMenuButton">
+                <li class="mb-2">
+                  <a class="dropdown-item border-radius-md" href="javascript:;">
+                    <div class="d-flex py-1">
+                      <div class="avatar avatar-sm bg-gradient-secondary me-3 my-auto">
+                        <i class="material-symbols-rounded">campaign</i>
+                      </div>
+                      <div class="d-flex flex-column justify-content-center">
+                        <h6 class="text-sm font-weight-normal mb-1">
+                          <span class="font-weight-bold">New announcement</span> posted
+                        </h6>
+                        <p class="text-xs text-secondary mb-0">
+                          <i class="fa fa-clock me-1"></i>
+                          13 minutes ago
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li class="mb-2">
+                  <a class="dropdown-item border-radius-md" href="javascript:;">
+                    <div class="d-flex py-1">
+                      <div class="avatar avatar-sm bg-gradient-success me-3 my-auto">
+                        <i class="material-symbols-rounded">payment</i>
+                      </div>
+                      <div class="d-flex flex-column justify-content-center">
+                        <h6 class="text-sm font-weight-normal mb-1">
+                          <span class="font-weight-bold">Payment received</span> from Fatima
+                        </h6>
+                        <p class="text-xs text-secondary mb-0">
+                          <i class="fa fa-clock me-1"></i>
+                          1 day ago
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item border-radius-md" href="javascript:;">
+                    <div class="d-flex py-1">
+                      <div class="avatar avatar-sm bg-gradient-warning me-3 my-auto">
+                        <i class="material-symbols-rounded">warning</i>
+                      </div>
+                      <div class="d-flex flex-column justify-content-center">
+                        <h6 class="text-sm font-weight-normal mb-1">
+                          System maintenance scheduled
+                        </h6>
+                        <p class="text-xs text-secondary mb-0">
+                          <i class="fa fa-clock me-1"></i>
+                          2 days ago
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item d-flex align-items-center">
+              <a href="../pages/sign-in.html" class="nav-link text-body font-weight-bold px-0">
+                <i class="material-symbols-rounded">account_circle</i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+          <div class="row mt-4">
+        <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+          <div class="card shadow-sm">
+            <div class="card-body p-3">
+              <div class="row">
+                <div class="col-8">
+                  <div class="numbers">
+                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Total Announcements</p>
+                    <h5 class="font-weight-bolder">24</h5>
+                    <p class="mb-0">
+                      <span class="text-success text-sm font-weight-bolder">+5%</span> this month
+                    </p>
+                  </div>
+                </div>
+                <div class="col-4 text-end">
+                  <div class="icon icon-shape bg-gradient-primary shadow-primary text-center rounded-circle">
+                    <i class="material-symbols-rounded text-lg opacity-10">campaign</i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+          <div class="card shadow-sm">
+            <div class="card-body p-3">
+              <div class="row">
+                <div class="col-8">
+                  <div class="numbers">
+                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Active</p>
+                    <h5 class="font-weight-bolder">8</h5>
+                    <p class="mb-0">
+                      <span class="text-success text-sm font-weight-bolder">+2</span> currently
+                    </p>
+                  </div>
+                </div>
+                <div class="col-4 text-end">
+                  <div class="icon icon-shape bg-gradient-success shadow-success text-center rounded-circle">
+                    <i class="material-symbols-rounded text-lg opacity-10">check_circle</i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+          <div class="card shadow-sm">
+            <div class="card-body p-3">
+              <div class="row">
+                <div class="col-8">
+                  <div class="numbers">
+                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Expired</p>
+                    <h5 class="font-weight-bolder">16</h5>
+                    <p class="mb-0">
+                      <span class="text-danger text-sm font-weight-bolder">-3%</span> than last month
+                    </p>
+                  </div>
+                </div>
+                <div class="col-4 text-end">
+                  <div class="icon icon-shape bg-gradient-danger shadow-danger text-center rounded-circle">
+                    <i class="material-symbols-rounded text-lg opacity-10">schedule</i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-sm-6">
+          <div class="card shadow-sm">
+            <div class="card-body p-3">
+              <div class="row">
+                <div class="col-8">
+                  <div class="numbers">
+                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Urgent</p>
+                    <h5 class="font-weight-bolder">3</h5>
+                    <p class="mb-0">
+                      <span class="text-success text-sm font-weight-bolder">+1</span> this week
+                    </p>
+                  </div>
+                </div>
+                <div class="col-4 text-end">
+                  <div class="icon icon-shape bg-gradient-warning shadow-warning text-center rounded-circle">
+                    <i class="material-symbols-rounded text-lg opacity-10">warning</i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- End Navbar -->
+    
+    <div class="container-fluid py-2">
+      <!-- Create Announcement Button -->
+      <div class="row mb-4">
+        <div class="col-12 text-end">
+          <button class="btn bg-gradient-dark mb-0" data-bs-toggle="modal" data-bs-target="#createAnnouncementModal">
+            <i class="material-symbols-rounded">add</i>&nbsp; Create Announcement
+          </button>
+        </div>
+      </div>
+      
+      <!-- Current Announcements Section -->
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="card shadow-sm">
+            <div class="card-header px-4 py-3 d-flex justify-content-between align-items-center">
+              <h6 class="mb-0">Current Announcements</h6>
+              <div class="dropdown">
+                <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" id="filterDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                  Filter by Status
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="filterDropdown">
+                  <li><a class="dropdown-item" href="#">All</a></li>
+                  <li><a class="dropdown-item" href="#">Active</a></li>
+                  <li><a class="dropdown-item" href="#">Expired</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="card-body p-4">
+              <div class="table-responsive">
+                <table class="table table-striped align-middle mb-0">
+                  <thead class="table-dark">
+                    <tr>
+                      <th>ID</th>
+                      <th>Title</th>
+                      <th>Publish Date</th>
+                      <th>Expiry Date</th>
+                      <th>Target</th>
+                      <th>Status</th>
+                      <th class="text-center">Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>#AN001</td>
+                      <td>Hostel Maintenance</td>
+                      <td>2025-06-25</td>
+                      <td>2025-07-10</td>
+                      <td>All Hostlers</td>
+                      <td><span class="badge bg-success">Active</span></td>
+                      <td class="text-center">
+                        <a href="#" class="btn btn-sm btn-primary me-1" data-bs-toggle="modal" data-bs-target="#viewAnnouncementModal"><i class="material-symbols-rounded">visibility</i></a>
+                        <a href="#" class="btn btn-sm btn-info me-1" data-bs-toggle="modal" data-bs-target="#editAnnouncementModal"><i class="material-symbols-rounded">edit</i></a>
+                        <a href="#" class="btn btn-sm btn-danger"><i class="material-symbols-rounded">delete</i></a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>#AN002</td>
+                      <td>Fee Payment Reminder</td>
+                      <td>2025-06-20</td>
+                      <td>2025-06-30</td>
+                      <td>Block A Hostlers</td>
+                      <td><span class="badge bg-warning text-dark">Expired</span></td>
+                      <td class="text-center">
+                        <a href="#" class="btn btn-sm btn-primary me-1"><i class="material-symbols-rounded">visibility</i></a>
+                        <a href="#" class="btn btn-sm btn-info me-1"><i class="material-symbols-rounded">edit</i></a>
+                        <a href="#" class="btn btn-sm btn-danger"><i class="material-symbols-rounded">delete</i></a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>#AN003</td>
+                      <td>Cultural Event</td>
+                      <td>2025-06-28</td>
+                      <td>2025-07-15</td>
+                      <td>All Students</td>
+                      <td><span class="badge bg-success">Active</span></td>
+                      <td class="text-center">
+                        <a href="#" class="btn btn-sm btn-primary me-1"><i class="material-symbols-rounded">visibility</i></a>
+                        <a href="#" class="btn btn-sm btn-info me-1"><i class="material-symbols-rounded">edit</i></a>
+                        <a href="#" class="btn btn-sm btn-danger"><i class="material-symbols-rounded">delete</i></a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>#AN004</td>
+                      <td>Mess Menu Change</td>
+                      <td>2025-06-15</td>
+                      <td>2025-06-30</td>
+                      <td>Mess Users</td>
+                      <td><span class="badge bg-warning text-dark">Expired</span></td>
+                      <td class="text-center">
+                        <a href="#" class="btn btn-sm btn-primary me-1"><i class="material-symbols-rounded">visibility</i></a>
+                        <a href="#" class="btn btn-sm btn-info me-1"><i class="material-symbols-rounded">edit</i></a>
+                        <a href="#" class="btn btn-sm btn-danger"><i class="material-symbols-rounded">delete</i></a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>#AN005</td>
+                      <td>Emergency Water Supply</td>
+                      <td>2025-07-01</td>
+                      <td>2025-07-03</td>
+                      <td>All Hostlers</td>
+                      <td><span class="badge bg-success">Active</span></td>
+                      <td class="text-center">
+                        <a href="#" class="btn btn-sm btn-primary me-1"><i class="material-symbols-rounded">visibility</i></a>
+                        <a href="#" class="btn btn-sm btn-info me-1"><i class="material-symbols-rounded">edit</i></a>
+                        <a href="#" class="btn btn-sm btn-danger"><i class="material-symbols-rounded">delete</i></a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <nav aria-label="Page navigation" class="mt-4">
+                <ul class="pagination justify-content-center">
+                  <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                  </li>
+                  <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">Next</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Latest Announcements Card -->
+        <div class="col-lg-4 mt-lg-0 mt-4">
+          <div class="card h-100">
+            <div class="card-header pb-0 p-3">
+              <div class="row">
+                <div class="col-6 d-flex align-items-center">
+                  <h6 class="mb-0">Latest Announcements</h6>
+                </div>
+                <div class="col-6 text-end">
+                  <button class="btn btn-outline-primary btn-sm mb-0">View All</button>
+                </div>
+              </div>
+            </div>
+            <div class="card-body p-3">
+              <div class="mb-3">
+                <div class="card announcement-card urgent mb-3">
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                      <h6 class="mb-1 text-dark font-weight-bold">Emergency Water Supply</h6>
+                      <span class="text-xs text-danger">Urgent</span>
+                    </div>
+                    <p class="text-sm mb-2">Water supply will be interrupted tomorrow from 9AM to 3PM for maintenance work.</p>
+                    <div class="d-flex justify-content-between">
+                      <span class="text-xs"><i class="material-symbols-rounded text-xs">schedule</i> Until: 03 Jul 2025</span>
+                      <span class="text-xs status-active">Active</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="card announcement-card event mb-3">
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                      <h6 class="mb-1 text-dark font-weight-bold">Cultural Event</h6>
+                      <span class="text-xs text-success">Event</span>
+                    </div>
+                    <p class="text-sm mb-2">Annual cultural event will be held on 10th July. Register by 5th July.</p>
+                    <div class="d-flex justify-content-between">
+                      <span class="text-xs"><i class="material-symbols-rounded text-xs">schedule</i> Until: 15 Jul 2025</span>
+                      <span class="text-xs status-active">Active</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="card announcement-card general">
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                      <h6 class="mb-1 text-dark font-weight-bold">Hostel Maintenance</h6>
+                      <span class="text-xs text-primary">General</span>
+                    </div>
+                    <p class="text-sm mb-2">Monthly maintenance scheduled for all hostel blocks this weekend.</p>
+                    <div class="d-flex justify-content-between">
+                      <span class="text-xs"><i class="material-symbols-rounded text-xs">schedule</i> Until: 10 Jul 2025</span>
+                      <span class="text-xs status-active">Active</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Statistics Cards -->
+
+      <footer class="footer py-4">
+        <div class="container-fluid">
+          <div class="row align-items-center justify-content-lg-between">
+            <div class="col-lg-6 mb-lg-0 mb-4">
+              <div class="copyright text-center text-sm text-muted text-lg-start">
+                © <script>
+                  document.write(new Date().getFullYear())
+                </script>,
+                made with <i class="fa fa-heart"></i> by
+                <a href="https://www.creative-tim.com" class="font-weight-bold" target="_blank">Creative Tim</a>
+                for a better web.
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <ul class="nav nav-footer justify-content-center justify-content-lg-end">
+                <li class="nav-item">
+                  <a href="https://www.creative-tim.com" class="nav-link text-muted" target="_blank">Creative Tim</a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://www.creative-tim.com/presentation" class="nav-link text-muted" target="_blank">About Us</a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://www.creative-tim.com/blog" class="nav-link text-muted" target="_blank">Blog</a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://www.creative-tim.com/license" class="nav-link pe-0 text-muted" target="_blank">License</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </main>
+  
+  <!-- Create Announcement Modal -->
+  <div class="modal fade" id="createAnnouncementModal" tabindex="-1" aria-labelledby="createAnnouncementModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="createAnnouncementModalLabel">Create New Announcement</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="announcementTitle" class="form-label">Title</label>
+                <input type="text" class="form-control" id="announcementTitle" placeholder="Enter announcement title" required>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="announcementType" class="form-label">Type</label>
+                <select class="form-select" id="announcementType" required>
+                  <option value="" selected disabled>Select type</option>
+                  <option value="general">General</option>
+                  <option value="urgent">Urgent</option>
+                  <option value="event">Event</option>
+                  <option value="maintenance">Maintenance</option>
+                </select>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="publishDate" class="form-label">Publish Date</label>
+                <input type="date" class="form-control" id="publishDate" required>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="expiryDate" class="form-label">Expiry Date</label>
+                <input type="date" class="form-control" id="expiryDate" required>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="targetAudience" class="form-label">Target Audience</label>
+              <select class="form-select" id="targetAudience" required>
+                <option value="" selected disabled>Select target</option>
+                <option value="all">All Hostlers</option>
+                <option value="block_a">Block A</option>
+                <option value="block_b">Block B</option>
+                <option value="block_c">Block C</option>
+                <option value="mess_users">Mess Users</option>
+                <option value="specific">Specific Hostlers</option>
+              </select>
+            </div>
+            <div class="mb-3" id="specificHostlersContainer" style="display:none;">
+              <label class="form-label">Select Hostlers</label>
+              <select class="form-select" multiple>
+                <option>Hostler 1</option>
+                <option>Hostler 2</option>
+                <option>Hostler 3</option>
+                <option>Hostler 4</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="announcementDescription" class="form-label">Description</label>
+              <textarea class="form-control" id="announcementDescription" rows="4" placeholder="Enter announcement details" required></textarea>
+            </div>
+            <div class="mb-3">
+              <label for="announcementStatus" class="form-label">Status</label>
+              <select class="form-select" id="announcementStatus" required>
+                <option value="active" selected>Active</option>
+                <option value="inactive">Inactive</option>
+              </select>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn bg-gradient-dark">Create Announcement</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- View Announcement Modal -->
+  <div class="modal fade" id="viewAnnouncementModal" tabindex="-1" aria-labelledby="viewAnnouncementModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="viewAnnouncementModalLabel">Announcement Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="card mb-3">
+            <div class="card-body">
+              <h4 class="card-title">Emergency Water Supply</h4>
+              <div class="d-flex justify-content-between mb-3">
+                <span class="badge bg-danger">Urgent</span>
+                <span class="text-success">Active</span>
+              </div>
+              <p class="card-text">Water supply will be interrupted tomorrow from 9AM to 3PM for maintenance work. Please store water accordingly. The maintenance is necessary for pipeline upgrades that will improve water pressure throughout the hostel.</p>
+              <div class="row mt-3">
+                <div class="col-md-6">
+                  <p class="mb-1"><strong>Published:</strong> 01 Jul 2025</p>
+                </div>
+                <div class="col-md-6">
+                  <p class="mb-1"><strong>Expires:</strong> 03 Jul 2025</p>
+                </div>
+              </div>
+              <p class="mb-1"><strong>Target:</strong> All Hostlers</p>
+              <p class="mb-0"><strong>Posted by:</strong> Admin (Hostel Office)</p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Print</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Edit Announcement Modal -->
+  <div class="modal fade" id="editAnnouncementModal" tabindex="-1" aria-labelledby="editAnnouncementModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editAnnouncementModalLabel">Edit Announcement</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="editAnnouncementTitle" class="form-label">Title</label>
+                <input type="text" class="form-control" id="editAnnouncementTitle" value="Emergency Water Supply" required>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="editAnnouncementType" class="form-label">Type</label>
+                <select class="form-select" id="editAnnouncementType" required>
+                  <option value="general">General</option>
+                  <option value="urgent" selected>Urgent</option>
+                  <option value="event">Event</option>
+                  <option value="maintenance">Maintenance</option>
+                </select>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="editPublishDate" class="form-label">Publish Date</label>
+                <input type="date" class="form-control" id="editPublishDate" value="2025-07-01" required>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="editExpiryDate" class="form-label">Expiry Date</label>
+                <input type="date" class="form-control" id="editExpiryDate" value="2025-07-03" required>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="editTargetAudience" class="form-label">Target Audience</label>
+              <select class="form-select" id="editTargetAudience" required>
+                <option value="all" selected>All Hostlers</option>
+                <option value="block_a">Block A</option>
+                <option value="block_b">Block B</option>
+                <option value="block_c">Block C</option>
+                <option value="mess_users">Mess Users</option>
+                <option value="specific">Specific Hostlers</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="editAnnouncementDescription" class="form-label">Description</label>
+              <textarea class="form-control" id="editAnnouncementDescription" rows="4" required>Water supply will be interrupted tomorrow from 9AM to 3PM for maintenance work. Please store water accordingly. The maintenance is necessary for pipeline upgrades that will improve water pressure throughout the hostel.</textarea>
+            </div>
+            <div class="mb-3">
+              <label for="editAnnouncementStatus" class="form-label">Status</label>
+              <select class="form-select" id="editAnnouncementStatus" required>
+                <option value="active" selected>Active</option>
+                <option value="inactive">Inactive</option>
+              </select>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn bg-gradient-dark">Save Changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--   Core JS Files   -->
+  <script src="../assets/js/core/popper.min.js"></script>
+  <script src="../assets/js/core/bootstrap.min.js"></script>
+  <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
+  <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
+  <script>
+    var win = navigator.platform.indexOf('Win') > -1;
+    if (win && document.querySelector('#sidenav-scrollbar')) {
+      var options = {
+        damping: '0.5'
+      }
+      Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
+    }
+    
+    // Show/hide specific hostlers select based on target audience
+    document.getElementById('targetAudience').addEventListener('change', function() {
+      const specificHostlersContainer = document.getElementById('specificHostlersContainer');
+      if (this.value === 'specific') {
+        specificHostlersContainer.style.display = 'block';
+      } else {
+        specificHostlersContainer.style.display = 'none';
+      }
+    });
+    
+    // Set today's date as default for publish date
+    document.addEventListener('DOMContentLoaded', function() {
+      const today = new Date().toISOString().split('T')[0];
+      document.getElementById('publishDate').value = today;
+      
+      // Set expiry date to 7 days from today by default
+      const nextWeek = new Date();
+      nextWeek.setDate(nextWeek.getDate() + 7);
+      const nextWeekFormatted = nextWeek.toISOString().split('T')[0];
+      document.getElementById('expiryDate').value = nextWeekFormatted;
+    });
+  </script>
+  <!-- Github buttons -->
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+  <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
+  <script src="../assets/js/material-dashboard.min.js?v=3.2.0"></script>
+</body>
+
+</html>
